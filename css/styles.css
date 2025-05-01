@@ -10,7 +10,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
 }
 
 #traichu {
@@ -19,7 +19,7 @@ main {
     flex-direction: column;
     justify-content: center;
     padding: var(--spacing-l) var(--spacing-m) var(--spacing-m) var(--spacing-m);
-    row-gap: var(--spacing-l);
+    /* row-gap: var(--spacing-l); */
     width: 20rem;
 }
 
@@ -69,13 +69,30 @@ header {
 
 aside {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
-aside img,
-aside svg { height: 4.5rem; }
+.greeting-container {
+    margin: 30px auto;
+    text-align: center;
+    font-family: var(--font-monospace);
+}
 
-#dock ul {
+.greeting-container h1 {
+    color: var(--primary-font-color);
+    font-size: 40px;
+    margin-bottom: -15px;
+}
+
+.greeting-container p {
+    padding-top: 1rem;
+    color: var(--primary-link-color);
+} 
+
+/* aside img,
+aside svg { height: 4.5rem; } */
+
+/* #dock ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -97,22 +114,22 @@ aside svg { height: 4.5rem; }
     animation: slime 0.75s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     fill: var(--primary-link-hover-color);
     outline: none;
-}
+} */
 
-#dock li:nth-child(1) a:focus,
-#dock li:nth-child(1) a:hover { fill: hsl(5, 81%, 56%); } /* Gmail */
-#dock li:nth-child(2) a:focus,
-#dock li:nth-child(2) a:hover { fill: hsl(217, 89%, 61%); } /* Google Calendar */
-#dock li:nth-child(3) a:focus,
-#dock li:nth-child(3) a:hover { fill: hsl(44, 100%, 50%); } /* Google Keep */
-#dock li:nth-child(4) a:focus,
-#dock li:nth-child(4) a:hover { fill: var(--primary-link-hover-color); } /* Notion */
-#dock li:nth-child(5) a:focus,
-#dock li:nth-child(5) a:hover { fill: hsl(102, 53%, 52%); } /* Github */
-#dock li:nth-child(6) a:focus,
-#dock li:nth-child(6) a:hover { fill: hsl(14, 89%, 53%); } /* Figma */
+/* #dock li:nth-child(1) a:focus,
+#dock li:nth-child(1) a:hover { fill: hsl(5, 81%, 56%); } Gmail */
+/* #dock li:nth-child(2) a:focus,
+#dock li:nth-child(2) a:hover { fill: hsl(217, 89%, 61%); } Google Calendar */
+/* #dock li:nth-child(3) a:focus,
+#dock li:nth-child(3) a:hover { fill: hsl(44, 100%, 50%); } Google Keep */
+/* #dock li:nth-child(4) a:focus,
+#dock li:nth-child(4) a:hover { fill: var(--primary-link-hover-color); } Notion */
+/* #dock li:nth-child(5) a:focus,
+#dock li:nth-child(5) a:hover { fill: hsl(102, 53%, 52%); } Github */
+/* #dock li:nth-child(6) a:focus,
+#dock li:nth-child(6) a:hover { fill: hsl(14, 89%, 53%); } Figma */
 
-#dock svg { height: 1.5rem; }
+/* #dock svg { height: 1.5rem; } */
 
 #search {
     display: flex;
@@ -166,11 +183,11 @@ aside svg { height: 4.5rem; }
 
 #search input:focus {
     background-color: hsl(var(--color-white-hsl) / 0.025);
-    border-color: var(--color-orange);
-    outline-color: hsl(var(--color-orange-hsl) / 0.25);
+    border-color: var(--color-white-hsl);
+    outline-color: hsl(var(--color-white-hsl) / 0.25);
 }
 
-#bookmarks {
+/* #bookmarks {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -192,14 +209,14 @@ aside svg { height: 4.5rem; }
     flex-direction: row;
     line-height: 1;
     margin-bottom: var(--spacing-xs);
-}
+} */
 
 .favicon {
     margin-right: var(--spacing-s);
     height: 1rem;
 }
 
-#bookmarks a {
+/* #bookmarks a {
     align-items: center;
     border-radius: 0.25rem;
     display: flex;
@@ -212,7 +229,7 @@ aside svg { height: 4.5rem; }
 #bookmarks a:hover {
     color: var(--primary-link-hover-color);
     outline: none;
-}
+} */
 
 /*
     Accessible hiding for screen readers
