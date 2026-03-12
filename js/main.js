@@ -75,4 +75,74 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update every minute to keep current time accurate
     setInterval(updateGreeting, 60000);
+
+    // Settings menu functionality
+    const settingsBtn = document.getElementById('settings-btn');
+    const settingsMenu = document.getElementById('settings-menu');
+    const engineOptions = document.querySelectorAll('.engine-option');
+    const searchForm = document.querySelector('#search form');
+
+    // Search engine URLs
+    const searchEngines = {
+        google: 'https://www.google.com/search?q=',
+        duckduckgo: 'https://duckduckgo.com/?q=',
+        bing: 'https://www.bing.com/search?q=',
+        'duckduckgo-lite': 'https://lite.duckduckgo.com/lite/?q='
+    };
+
+    // Load saved search engine preference
+    function loadSearchEnginePreference() {
+        const saved = localStorage.getItem('searchEngine') || 'google';
+        setActiveEngine(saved);
+        updateFormAction(saved);
+        return saved;
+    }
+
+    // Update form action based on search engine
+    function updateFormAction(engine) {
+        if (searchForm) {
+            searchForm.action = searchEngines[engine];
+        }
+    }
+
+    // Set active engine button
+    function setActiveEngine(engine) {
+        engineOptions.forEach(option => {
+            if (option.dataset.engine === engine) {
+                option.classList.add('active');
+            } else {
+                option.classList.remove('active');
+            }
+        });
+    }
+
+    // Toggle settings menu
+    settingsBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        settingsMenu.classList.toggle('hidden');
+        if (!settingsMenu.classList.contains('hidden')) {
+            settingsMenu.classList.add('visible');
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!settingsMenu.contains(e.target) && !settingsBtn.contains(e.target)) {
+            settingsMenu.classList.add('hidden');
+            settingsMenu.classList.remove('visible');
+        }
+    });
+
+    // Handle engine selection
+    engineOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const engine = this.dataset.engine;
+            localStorage.setItem('searchEngine', engine);
+            setActiveEngine(engine);
+            updateFormAction(engine);
+        });
+    });
+
+    // Load preference on page load
+    loadSearchEnginePreference();
 });

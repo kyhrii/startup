@@ -264,3 +264,123 @@ aside svg { height: 4.5rem; } */
 
     #bookmarks { flex-direction: row; }
 }
+
+/* Settings Button Styles */
+.settings-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.settings-button i {
+    font-size: 24px;
+    color: var(--primary-link-color);
+    transition: transform 0.3s ease;
+}
+
+.settings-button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-link-color);
+    transition: transform 0.3s ease;
+}
+
+.settings-button:hover {
+    transform: scale(1.1);
+}
+
+.settings-button:hover svg {
+    animation: settingsRotate 0.6s ease;
+}
+
+.settings-button:hover i {
+    animation: settingsRotate 0.6s ease;
+}
+
+.settings-button:active {
+    transform: scale(0.95);
+}
+
+/* Settings Menu Styles */
+.settings-menu {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    background-color: var(--primary-background-color);
+    border: 2px solid var(--primary-link-color);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 99;
+    min-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.settings-menu.hidden {
+    display: none;
+}
+
+.settings-menu.visible {
+    animation: slideInUp 0.4s ease forwards;
+}
+
+.settings-menu h2 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: var(--primary-link-hover-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.search-engines-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-engines-list li {
+    margin-bottom: 10px;
+}
+
+.search-engines-list li:last-child {
+    margin-bottom: 0;
+}
+
+.engine-option {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: transparent;
+    border: 1px solid var(--primary-link-color);
+    border-radius: 4px;
+    color: var(--primary-link-color);
+    font-family: var(--font-monospace);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    animation: menuItemFlyIn 0.3s ease forwards;
+}
+
+.engine-option:hover {
+    background-color: var(--primary-link-color);
+    color: var(--primary-background-color);
+}
+
+.engine-option.active {
+    background-color: var(--primary-link-hover-color);
+    color: var(--primary-background-color);
+    border-color: var(--primary-link-hover-color);
+    font-weight: 700;
+}
+
+.search-engines-list li:nth-child(1) .engine-option { animation-delay: 0s; }
+.search-engines-list li:nth-child(2) .engine-option { animation-delay: 0.05s; }
+.search-engines-list li:nth-child(3) .engine-option { animation-delay: 0.1s; }
+.search-engines-list li:nth-child(4) .engine-option { animation-delay: 0.15s; }
