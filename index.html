@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <title>startpage</title>
@@ -27,6 +28,25 @@
                 <h2 class="sr-only">Location &amp; Weather</h2>
             </section>
         </header>
+        <div id="settings-btn" class="settings-button" title="Settings">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0-2c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6 2.69-6 6-6zm0 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/>
+                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.52l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.34.24.52.49.52h4c.25 0 .46-.18.49-.52l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+            </svg>
+        </div>
+
+        <div id="settings-menu" class="settings-menu hidden">
+            <div class="settings-menu-content">
+                <h2>Search Engine</h2>
+                <ul class="search-engines-list">
+                    <li><button class="engine-option" data-engine="google">Google</button></li>
+                    <li><button class="engine-option" data-engine="duckduckgo">DuckDuckGo</button></li>
+                    <li><button class="engine-option" data-engine="bing">Bing</button></li>
+                    <li><button class="engine-option" data-engine="duckduckgo-lite">DuckDuckGo Lite</button></li>
+                </ul>
+            </div>
+        </div>
+
         <section id="traichu">
             <h1 class="sr-only">_traichu</h1>
             <aside>
@@ -52,7 +72,7 @@
             </nav> -->
             <section id="search">
                 <h2 class="sr-only">Search</h2>
-                <form action="https://duckduckgo.com/" method="get">
+                <form method="get">
                     <input type="text" id="q" name="q" autofocus>
                     <button class="sr-only" tabindex="-1">Search</button>
                 </form>
